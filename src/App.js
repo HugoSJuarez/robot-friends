@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
+import Scroll from "./Scroll";
 import './App.css';
 
 class App extends Component {
@@ -31,31 +32,12 @@ class App extends Component {
             <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
                 <SearchBox searchChange={this.onSearchChange} />
-                <CardList list={filteredRobots}/>
-            </div>
+                <Scroll>
+                    <CardList list={filteredRobots}/>
+                </Scroll>
+            </div> 
         );
     }
 }
-
-// function Appp() {
-//     const [userList, setUserList] = useState(robots);
-//     const [searchfield, setSearchfield] = useState('');
-
-//     function handleSearchChange(e) {
-//         setSearchfield(e.target.value);
-//     }
-
-//     const filteredUsers = userList.filter(user=>{
-//         return user.name.toLowerCase().includes(searchfield.toLowerCase());
-//     });
-
-//     return (
-//         <div className="tc">
-//                 <h1 className="f1">RoboFriends</h1>
-//                 <SearchBox searchChange={handleSearchChange} />
-//                 <CardList list={filteredUsers}/>
-//         </div>
-//     );
-// }
 
 export default App;
